@@ -443,7 +443,7 @@ function draw(){
     if(textAlpha>0.02){
       ctx.globalAlpha = textAlpha;
       ctx.font='600 '+d.fs+'px "Gothic A1", sans-serif';
-      ctx.fillStyle = isClicked ? '#ffffff' : (isEntity? mixToBg(n.color, keep) : mixToBg(pillLum > 150 ? '#141418' : '#ffffff', Math.max(keep, 0.35)));
+      ctx.fillStyle = isClicked ? '#ffffff' : (isEntity? mixToBg(n.color, keep) : mixToBg(pillLum > 150 ? '#141418' : '#ffffff', keep));
       ctx.textAlign='center'; ctx.textBaseline='middle';
       ctx.fillText(n.label, n.x, n.y+d.fs*0.06);
       ctx.textBaseline='alphabetic';
