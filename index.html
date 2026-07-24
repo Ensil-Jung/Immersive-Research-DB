@@ -626,7 +626,11 @@ addEventListener('mouseup',e=>{
     const n=pick(e.clientX,e.clientY);
     const inFilter = n && clusterFilter && ((clusterFilter==='__papers__') ? (n.type==='paper') : (n.type==='kw' && n.cluster===clusterFilter));
     if(n && (!clusterFilter || inFilter)) selectNode(n);
-    else { selNode=null; clusterFilter=null; closePanel(); }
+    else {
+      selNode=null; clusterFilter=null;
+      searchTerm=''; const si=document.getElementById('search'); if(si) si.value='';   // clicking empty space also clears the search
+      closePanel();
+    }
   }
   drag=null; panning=false;
 });
